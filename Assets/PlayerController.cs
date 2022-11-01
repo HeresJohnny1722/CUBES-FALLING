@@ -35,4 +35,13 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerEnter2D(Collider2D blockCollider)
+    {
+        if(blockCollider.tag == "Falling Block")
+        {
+            Destroy(gameObject);
+            print("Game Over");
+        }
+    }
 }
