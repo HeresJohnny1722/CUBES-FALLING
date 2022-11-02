@@ -5,8 +5,14 @@ using UnityEngine;
 public class BlocksFalling : MonoBehaviour
 {
 
-    float speed = 7;
+    float speed;
+    public Vector2 speedMinMax;
 
+
+    void Start()
+    {
+        speed = Mathf.Lerp(speedMinMax.x, speedMinMax.y, Difficulty.GetDifficultyPerecent());
+    }
 
     // Update is called once per frame
     void Update()
