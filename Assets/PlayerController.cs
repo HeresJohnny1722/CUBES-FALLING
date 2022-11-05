@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed = 7;
+    public event System.Action OnPlayerDeath;
 
     float screenHalfWidthInWorldUnits;
 
@@ -40,8 +41,11 @@ public class PlayerController : MonoBehaviour
     {
         if(blockCollider.tag == "Falling Block")
         {
+            if (OnPlayerDeath != null)
+            {
+                OnPlayerDeath();
+            }
             Destroy(gameObject);
-            print("Game Over");
         }
     }
 }

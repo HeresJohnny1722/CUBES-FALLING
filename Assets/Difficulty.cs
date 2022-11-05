@@ -8,6 +8,6 @@ public static class Difficulty
 
     public static float GetDifficultyPerecent()
     {
-        return Mathf.Clamp01(Time.time / secondsToMaxDifficulty);
+        return Mathf.Clamp01(Time.timeSinceLevelLoad / secondsToMaxDifficulty);
     }
 }
